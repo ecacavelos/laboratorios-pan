@@ -10,4 +10,12 @@ class IndexsController extends AppController {
 
 	}
 	
+	public function enlaces() {
+
+	}
+	
+	public function contactenos() {
+
+	}
+	
 }
