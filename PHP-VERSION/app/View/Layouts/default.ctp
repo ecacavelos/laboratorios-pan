@@ -74,13 +74,18 @@ $cakeDescription = __d('cake_dev', 'CakePHP: the rapid development php framework
             </div>
             <div id="menuTop">
                 <ul>
-                    <li><a href="/WEB-PAN-PHP/">Inicio</a></li>
-                    <li><a href="/WEB-PAN-PHP/empresa">La empresa</a></li>
-                    <li><a href="/WEB-PAN-PHP/">Productos</a></li>
+                    <!--<li><a href="/">Inicio</a></li>-->
+                    <li><?php echo $this->Html->link('Inicio', array('controller' => 'indexs', 'action' => 'index')); ?></li>
+                    <!--<li><a href="/empresa">La empresa</a></li>-->
+                    <li><?php echo $this->Html->link('La Empresa', array('controller' => 'indexs', 'action' => 'empresa')); ?></li>
+                    <!--<li><a href="/productos">Productos</a></li>-->
+                    <li><?php echo $this->Html->link('Productos', array('controller' => 'productos', 'action' => 'index')); ?></li>
                     <!--<li><a href="/WEB-PAN-PHP/">Stevia Pan</a></li>-->
                     <li><?php echo $this->Html->link('Stevia Pan', 'http://www.steviapan.com/', array('target' => '_blank')); ?></li>
-                    <li><a href="/WEB-PAN-PHP/enlaces">Enlaces de Interes</a></li>
-                    <li><a href="/WEB-PAN-PHP/contactenos">Contactenos</a></li>
+                    <!--<li><a href="/enlaces">Enlaces de Interes</a></li>-->
+                    <li><?php echo $this->Html->link('Enlaces de Interes', array('controller' => 'indexs', 'action' => 'enlaces')); ?></li>
+                    <!--<li><a href="/contactenos">Contactenos</a></li>-->
+                    <li><?php echo $this->Html->link('Contactenos', array('controller' => 'indexs', 'action' => 'contactenos')); ?></li>
                 </ul>
 			</div>
                     
@@ -91,6 +96,7 @@ $cakeDescription = __d('cake_dev', 'CakePHP: the rapid development php framework
                 <div id="lf">
                     López De Filippi 2855 – Barrio San Vicente<br/>
                     595-21 332-389 / 595-21 303-653
+                    <?php echo $this->webroot; ?>
                 </div>
                 <div id="rg">
                     <!--<a href="index.html"><img src="images/homenaje_home.png"/></a>-->
