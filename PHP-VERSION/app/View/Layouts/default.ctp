@@ -32,14 +32,31 @@ $cakeDescription = __d('cake_dev', 'CakePHP: the rapid development php framework
 		echo $this->Html->css('nivo-slider/nivo-slider.css');
 		echo $this->Html->css('nivo-slider/demo/style.css');
 		
+		//CSSs para la libreria de galeria de imagenes para la seccion de productos
+		//echo $this->Html->css('basic.css');
+		echo $this->Html->css('galleriffic-2.css');
+		//
+		
 		echo $this->Html->script('nivo-slider/demo/scripts/jquery-1.4.3.min.js');
 		echo $this->Html->script('nivo-slider/jquery.nivo.slider.pack.js');		
 		echo $this->Html->script('start-slider.js');
+		
+		//SCRIPTs para la libreria de galeria de imagenes para la seccion de productos
+		echo $this->Html->script('jquery.galleriffic.js');
+		echo $this->Html->script('jquery.opacityrollover.js');
+		//
+		
 
 		echo $this->fetch('meta');
 		echo $this->fetch('css');
 		echo $this->fetch('script');
 	?>
+<!--Script para seccion de prodcutos	-->
+	<script type="text/javascript">
+			document.write('<style>.noscript { display: none; }</style>');
+	</script>
+<!--Script para seccion de prodcutos	-->	
+	
 </head>
 <body>
 	<div id="container">
