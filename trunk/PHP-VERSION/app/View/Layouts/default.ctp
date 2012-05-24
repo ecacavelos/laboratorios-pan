@@ -96,7 +96,7 @@ $cakeDescription = __d('cake_dev', 'CakePHP: the rapid development php framework
                 <div id="lf">
                     López De Filippi 2855 – Barrio San Vicente<br/>
                     595-21 332-389 / 595-21 303-653
-                    <?php echo $this->webroot; ?>
+                    <?php //echo $this->webroot; ?>
                 </div>
                 <div id="rg">
                     <!--<a href="index.html"><img src="images/homenaje_home.png"/></a>-->

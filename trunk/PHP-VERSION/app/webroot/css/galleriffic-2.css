@@ -90,6 +90,7 @@ div.image-desc {
 }
 div.navigation {
 	/* The navigation style is set using jQuery so that the javascript specific styles won't be applied unless javascript is enabled. */
+	margin-left: 22px !important;
 }
 ul.thumbs {
 	clear: both;

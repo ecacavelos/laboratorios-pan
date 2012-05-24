@@ -98,7 +98,7 @@ hr {
 	padding-bottom: 20px;
 	text-align: center;
 	text-transform: uppercase;
-	font: 100 15px 'GillSansLight','Gill Sans', 'Calibri';
+	font: 100 15px 'GillSansLight', 'Gill Sans', 'Gill Sans MT', 'Calibri' !important;
 }
 
 #menuTop li a:visited {
@@ -882,6 +882,14 @@ CSS3 Rounded Corners */
 	-webkit-border-bottom-right-radius: 3px;
 	border-bottom-right-radius: 3px;
 
+}
+
+/* Formulario de Login */
+form#UserAddForm fieldset label {
+	padding-top: 0px !important;	
+}
+form#UserLoginForm fieldset label {
+	padding-top: 0px !important;	
 }
 
 /* @group IE6 REDIRECT */
