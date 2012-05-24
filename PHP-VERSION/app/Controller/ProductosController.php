@@ -10,7 +10,7 @@ class ProductosController extends AppController {
 	public $name = 'Productos';
 	
 	public function index() {		
-	 //$this->set('productos', $this->Producto->find('all'));
+	 $this->set('productos', $this->Producto->find('all'));
 	}
 	
 	public function add() {		
