@@ -42,7 +42,7 @@
 							</a>
 							<div class="caption">
 								<div class="image-title">'.$producto['Producto']['nombre'].'</div>
-								<div class="image-desc">'.$producto['Producto']['descripcion'].'</div>
+								<div class="image-desc"><p id="desc_producto">'.$producto['Producto']['descripcion'].'</p></div>
 							</div>
 						</li>';
 						}
