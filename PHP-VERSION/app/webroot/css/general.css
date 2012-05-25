@@ -912,5 +912,8 @@ form#UserLoginForm fieldset label {
 	/*background-color: #83c242;*/
 	padding: 15px;
 }
+#desc_producto{
+	word-wrap: break-word;
+}
 
 /* @end */
