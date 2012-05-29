@@ -57,9 +57,21 @@ class ProductosController extends AppController {
 			$this->request->data = $this->Producto->read();
 		} else {
 			if ($this->Producto->save($this->request->data)) {
-				$this->Session->setFlash('Se actualizó el producto.');
 				
-				
+				$dir = new Folder(WWW_ROOT.'img\productos');
+				$file = new File($dir->pwd() . DS . $id . '.jpg');
+				$file->delete();
+				$file->close();
+
+				$file = new File($dir->pwd() . DS . 'temp.jpg');
+				if ($file->exists()) {
+					$file->copy($dir->pwd() . DS . $id . '.jpg');
+					$file->delete();
+									$this->Session->setFlash('Se actualizó el producto.');
+				} else {
+					$this->Session->setFlash('No se pudo actualizar el producto.');
+				}
+				$file->close();
 				
 				$this->redirect(array('action' => 'index'));
 			} else {
