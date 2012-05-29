@@ -1,10 +1,13 @@
 <!-- File: /app/View/Productos/add.ctp -->
-
-<?php $this->set('title_for_layout', "Laboratorios PAN SRL - Agregar Productos"); ?>
-
-<div id="illus_content_int_pages"><!-- START ILLUST CONTENT -->
-	<h2 align="center"><font face="Arial">ACÁ AGREGAMOS PRODUCTOS</font></h2>
-	<ul>
-    	<li>Work In Progress</li>
-    </ul>    
+<div class="productos form">
+    <?php echo $this->Form->create('Producto', array('type' => 'file'));?>
+        <fieldset>
+            <legend><?php echo __('Agregar Producto'); ?></legend>
+        <?php
+            echo $this->Form->input('nombre', array('type' => 'text'));
+            echo $this->Form->input('descripcion');
+			echo $this->Form->input('file', array('type' => 'file'));			
+        ?>
+        </fieldset>
+    <?php echo $this->Form->end(__('Submit'));?>
 </div>

@@ -115,6 +115,9 @@ a.thumb:focus {
 ul.thumbs img {
 	border: none;
 	display: block;
+	
+	width: 75px;
+	height: 75px;
 }
 div.pagination {
 	clear: both;
