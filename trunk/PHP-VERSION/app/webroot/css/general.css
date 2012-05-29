@@ -891,6 +891,9 @@ form#UserAddForm fieldset label {
 form#UserLoginForm fieldset label {
 	padding-top: 0px !important;	
 }
+form#ProductoAddForm fieldset label {
+	padding-top: 0px !important;	
+}
 
 /* @group IE6 REDIRECT */
 
