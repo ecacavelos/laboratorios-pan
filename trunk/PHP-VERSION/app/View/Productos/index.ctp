@@ -1,3 +1,10 @@
+<?php
+	if ($logeado == '1') {
+		echo 'Estas logeado. ';
+		echo $this->Html->link('Cerrar Sesión', array('controller' => 'users', 'action' => 'logout'));
+	}
+?>
+
 <h1><a href="index.html">Productos</a></h1>
 
 <!-- Start Advanced Gallery Html Containers -->
@@ -31,9 +38,9 @@
         //$this->webroot.'/img/productos/'.$producto['Producto']['id_producto'].'.jpg -> path a las imagenes. 
         foreach ($productos as $producto){
             
-            $path = $this->webroot.'img/productos/'.$producto['Producto']['id_producto'].'.jpg';
+            $path = $this->webroot.'img/productos/'.$producto['Producto']['id'].'.jpg';
             //$path_thumb = $this->webroot.'img/productos/'.$producto['Producto']['id_producto'].'_s.jpg';
-            $path_thumb = $this->webroot.'img/productos/'.$producto['Producto']['id_producto'].'.jpg';
+            $path_thumb = $this->webroot.'img/productos/'.$producto['Producto']['id'].'.jpg';
             
             echo '<li>
             <a class="thumb" name="drop" href="'.$path.'" title="'.$producto['Producto']['nombre'].'">
@@ -41,16 +48,20 @@
             </a>
             <div class="caption">
                 <div class="image-title">'.$producto['Producto']['nombre'].'</div>
-                <div class="image-desc"><p id="desc_producto">'.$producto['Producto']['descripcion'].'</p></div>
-            </div>
-        	</li>';
+                <div class="image-desc"><p id="desc_producto">'.$producto['Producto']['descripcion'].'</p></div>';            
+				if ($logeado == '1') {
+					echo '<p>'.$this->Html->link('Editar este producto', array('controller' => 'productos', 'action' => 'edit', $producto['Producto']['id'])).'</p>';
+					echo '<p>'.$this->Form->postLink('Eliminar este producto', array('controller' => 'productos', 'action' => 'delete', $producto['Producto']['id']), array('confirm' => 'Está seguro?')).'</p>';
+				}
+        	echo '</div>
+			</li>';
 		
         }    
     ?>				
         
     </ul>
 </div>
-<div style="clear: both;"></div>               		
+<div style="clear: both;"></div> 
 		
 <script type="text/javascript">
 	jQuery(document).ready(function($) {

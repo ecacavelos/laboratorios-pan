@@ -12,6 +12,11 @@ class ProductosController extends AppController {
 	
 	public function index() {		
 		$this->set('productos', $this->Producto->find('all'));
+		if ($this->Auth->user('id')) {
+			$this->set('logeado', '1');
+		} else {
+			$this->set('logeado', '0');
+		}
 	}	
 	
     public function add() {
@@ -21,9 +26,7 @@ class ProductosController extends AppController {
         if ($this->request->is('post')) {
 			$this->Producto->create();
             if ($this->Producto->save($this->request->data)) {
-				
-				//$this->Session->setFlash($this->Producto->getLastInsertID());
-				
+								
 				$dir = new Folder(WWW_ROOT.'img\productos');
 				$file = new File($dir->pwd() . DS . 'temp.jpg');
 				
@@ -38,13 +41,54 @@ class ProductosController extends AppController {
 				$file->close();
 
                 $this->redirect(array('action' => 'index'));
+				
             } else {
                 $this->Session->setFlash('No se pudo agregar el producto.');
             }
         }
     }
 	
-	public function edit() {		
+	public function edit($id = null) {
+		App::uses('Folder', 'Utility');
+		App::uses('File', 'Utility');
+		
+		$this->Producto->id = $id;
+		if ($this->request->is('get')) {
+			$this->request->data = $this->Producto->read();
+		} else {
+			if ($this->Producto->save($this->request->data)) {
+				$this->Session->setFlash('Se actualizó el producto.');
+				
+				
+				
+				$this->redirect(array('action' => 'index'));
+			} else {
+				$this->Session->setFlash('No se pudo actualizar el producto.');
+			}
+		}
+	}
+	
+	public function delete($id) {
+		App::uses('Folder', 'Utility');
+		App::uses('File', 'Utility');
+		
+		if ($this->request->is('get')) {
+			throw new MethodNotAllowedException();
+		}
+		if ($this->Producto->delete($id)) {
+			
+			$dir = new Folder(WWW_ROOT.'img\productos');
+			$file = new File($dir->pwd() . DS . $id . '.jpg');
+			
+			if ($file->exists()) {
+				$file->delete();
+			}
+			
+			$file->close();
+						
+			$this->Session->setFlash('El producto con ID: ' . $id . ' ha sido borrado.');
+			$this->redirect(array('action' => 'index'));
+		}
 	}
 		
 }
