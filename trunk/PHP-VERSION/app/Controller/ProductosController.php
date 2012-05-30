@@ -89,7 +89,7 @@ class ProductosController extends AppController {
 		}
 		if ($this->Producto->delete($id)) {
 			
-			$dir = new Folder(WWW_ROOT.'img\productos');
+			$dir = new Folder(WWW_ROOT.'img/productos');
 			$file = new File($dir->pwd() . DS . $id . '.jpg');
 			
 			if ($file->exists()) {
