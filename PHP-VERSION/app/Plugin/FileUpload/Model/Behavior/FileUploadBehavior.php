@@ -113,6 +113,7 @@ class FileUploadBehavior extends ModelBehavior {
   /**
     * Automatically remove the uploaded file.
     */
+  /*
   function beforeDelete(&$Model, $cascade){
     $Model->recursive = -1;
     $data = $Model->read();
@@ -120,6 +121,7 @@ class FileUploadBehavior extends ModelBehavior {
     $this->Uploader[$Model->alias]->removeFile($data[$Model->alias][$this->options[$Model->alias]['fields']['name']]);
     return $Model->beforeDelete($cascade);
   }
+  */
   
 }
 ?>
