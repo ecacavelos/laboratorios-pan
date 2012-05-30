@@ -27,7 +27,7 @@ class ProductosController extends AppController {
 			$this->Producto->create();
             if ($this->Producto->save($this->request->data)) {
 								
-				$dir = new Folder(WWW_ROOT.'img\productos');
+				$dir = new Folder(WWW_ROOT.'img/productos');
 				$file = new File($dir->pwd() . DS . 'temp.jpg');
 				
 				if ($file->exists()) {
@@ -58,7 +58,7 @@ class ProductosController extends AppController {
 		} else {
 			if ($this->Producto->save($this->request->data)) {
 				
-				$dir = new Folder(WWW_ROOT.'img\productos');
+				$dir = new Folder(WWW_ROOT.'img/productos');
 				$file = new File($dir->pwd() . DS . $id . '.jpg');
 				$file->delete();
 				$file->close();
