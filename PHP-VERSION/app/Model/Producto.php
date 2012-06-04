@@ -1,5 +1,6 @@
 <?php
 class Producto extends AppModel {
+	
 	public $validate = array(
         'nombre' => array(
             'rule' => 'notEmpty'
@@ -9,11 +10,9 @@ class Producto extends AppModel {
         )
     );
 	
-	var $actsAs = array('FileUpload.FileUpload' => array('uploadDir' => 'img/productos', 'fileNameFunction' => 'sanitizeFileName'));
-	
-	function sanitizeFileName($fileName){
-		//Logic for sanitizing your filename
-    	return 'temp.jpg';
-	}
+	public $name = 'Producto';
+    public $hasMany = array(
+        'Upload' => array('className' => 'Upload'),
+    );
 	
 }

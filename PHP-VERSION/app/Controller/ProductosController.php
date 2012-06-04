@@ -25,20 +25,33 @@ class ProductosController extends AppController {
 		
         if ($this->request->is('post')) {
 			$this->Producto->create();
-            if ($this->Producto->save($this->request->data)) {
+            if ($this->Producto->saveAll($this->request->data)) {
 								
 				$dir = new Folder(WWW_ROOT.'img/productos');
 				$file = new File($dir->pwd() . DS . 'temp.jpg');
+				$current_id = $this->Producto->getLastInsertID();
 				
+				// Verificamos que exista el archivo de imagen, subido como 'temp.jpg' antes de darle el nombre apropiado
 				if ($file->exists()) {
-					$file->copy($dir->pwd() . DS . $this->Producto->getLastInsertID() . '.jpg');
-					//$file->copy($dir->pwd() . DS . $this->Producto->getLastInsertID() . '_s.jpg');
+					$file->copy($dir->pwd() . DS . $current_id . '.jpg');					
 					$file->delete();
 					$this->Session->setFlash('El producto se ha agregado correctamente.');
 				} else {
-					$this->Session->setFlash('No se pudo agregar el producto.');
+					$this->Session->setFlash('No se pudo cargar el archivo de imagen para el producto.');
 				}
 				$file->close();
+				
+				// Verificamos que exista el archivo de prospecto, subido como 'temp.pdf' antes de darle el nombre apropiado
+				$file = new File($dir->pwd() . DS . 'temp.pdf');
+				if ($file->exists()) {
+					$this->Producto->id = $current_id;									
+					$file->copy($dir->pwd() . DS . $this->Producto->field('nombre') . '.pdf');
+					$file->delete();
+					$this->Session->setFlash('El producto se ha agregado correctamente.');
+				} else {
+					$this->Session->setFlash('No se pudo cargar el archivo de prospecto para el producto.');
+				}
+				$file->close();				
 
                 $this->redirect(array('action' => 'index'));
 				
@@ -62,7 +75,7 @@ class ProductosController extends AppController {
 				$file = new File($dir->pwd() . DS . $id . '.jpg');
 				$file->delete();
 				$file->close();
-
+				
 				$file = new File($dir->pwd() . DS . 'temp.jpg');
 				if ($file->exists()) {
 					$file->copy($dir->pwd() . DS . $id . '.jpg');
