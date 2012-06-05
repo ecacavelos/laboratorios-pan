@@ -53,6 +53,7 @@
 					echo '<p>'.$this->Html->link('Editar este producto', array('controller' => 'productos', 'action' => 'edit', $producto['Producto']['id'])).'</p>';
 					echo '<p>'.$this->Form->postLink('Eliminar este producto', array('controller' => 'productos', 'action' => 'delete', $producto['Producto']['id']), array('confirm' => 'Está seguro?')).'</p>';
 				}
+				echo '<p>'.$this->Html->link('Ver el prospecto','/img/productos/'.$producto['Producto']['nombre'].'.pdf').'</p>';
         	echo '</div>
 			</li>';
 		
@@ -66,7 +67,7 @@
 <script type="text/javascript">
 	jQuery(document).ready(function($) {
 		// We only want these styles applied when javascript is enabled
-		$('div.navigation').css({'width' : '300px', 'float' : 'left'});
+		$('div.navigation').css({'width' : '325px', 'float' : 'left'});
 		$('div.content').css('display', 'block');
 
 		// Initially set opacity on thumbs and add
