@@ -85,7 +85,7 @@ $cakeDescription = __d('cake_dev', 'CakePHP: the rapid development php framework
                     <!--<li><a href="/enlaces">Enlaces de Interes</a></li>-->
                     <!--<li>< ?php echo $this->Html->link('Enlaces de Interes', array('controller' => 'indexs', 'action' => 'enlaces')); ?></li>-->
                     <!--<li><a href="/contactenos">Contactenos</a></li>-->
-                    <li><?php echo $this->Html->link('Contactenos', array('controller' => 'indexs', 'action' => 'contactenos')); ?></li>
+                    <li><?php echo $this->Html->link('Contactenos', array('controller' => 'contactos')); ?></li>
                 </ul>
 			</div>
                     
