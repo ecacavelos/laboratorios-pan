@@ -205,6 +205,8 @@
 					.removeAttr('name')
 					.hover(function(e) {
 						gallery.clickHandler(e, this);
+					},function(){
+						
 					});
 
 				return this;

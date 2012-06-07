@@ -53,7 +53,7 @@
 					echo '<p>'.$this->Html->link('Editar este producto', array('controller' => 'productos', 'action' => 'edit', $producto['Producto']['id'])).'</p>';
 					echo '<p>'.$this->Form->postLink('Eliminar este producto', array('controller' => 'productos', 'action' => 'delete', $producto['Producto']['id']), array('confirm' => 'Está seguro?')).'</p>';
 				}
-				echo '<p>'.$this->Html->link('Ver el prospecto','/img/productos/'.$producto['Producto']['nombre'].'.pdf').'</p>';
+				echo '<p>'.$this->Html->link('Ver el prospecto','/img/productos/'.$producto['Producto']['nombre'].'.pdf', array('target' => '_blank')).'</p>';
         	echo '</div>
 			</li>';
 		
