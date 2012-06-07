@@ -35,7 +35,6 @@ $cakeDescription = __d('cake_dev', 'CakePHP: the rapid development php framework
 		//CSSs para la libreria de galeria de imagenes para la seccion de productos
 		//echo $this->Html->css('basic.css');
 		echo $this->Html->css('galleriffic-2.css');
-		//
 		
 		echo $this->Html->script('nivo-slider/demo/scripts/jquery-1.4.3.min.js');
 		echo $this->Html->script('nivo-slider/jquery.nivo.slider.pack.js');		
@@ -44,8 +43,9 @@ $cakeDescription = __d('cake_dev', 'CakePHP: the rapid development php framework
 		//SCRIPTs para la libreria de galeria de imagenes para la seccion de productos
 		echo $this->Html->script('jquery.galleriffic.js');
 		echo $this->Html->script('jquery.opacityrollover.js');
-		//
-		
+
+		//SCRIPT para las animaciones de la cabecera
+		echo $this->Html->script('header-effects.js');		
 
 		echo $this->fetch('meta');
 		echo $this->fetch('css');
@@ -61,7 +61,6 @@ $cakeDescription = __d('cake_dev', 'CakePHP: the rapid development php framework
 <body>
 	<div id="container">
 		<div id="content" class="clear">
-        
             <div id="header">
                 <div id="logo">
                     <!--<a href="index.php"><img src="images/logo.png" border="0"/></a>-->
@@ -69,7 +68,7 @@ $cakeDescription = __d('cake_dev', 'CakePHP: the rapid development php framework
                 </div>
                 <div id="logo_iso">                	
                     <!--<img src="images/logo_rg.png"/>-->
-                    <?php echo $this->Html->image('logo_rg.png', array('alt' => $title_for_layout)); ?>
+                    <?php echo $this->Html->image('logo_rg.png', array('alt' => $title_for_layout, 'id' => 'rotable_image')); ?>
                 </div>
             </div>
             <div id="menuTop">

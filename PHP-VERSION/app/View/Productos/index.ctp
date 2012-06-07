@@ -5,7 +5,7 @@
 	}
 ?>
 
-<h1><a href="index.html">Productos</a></h1>
+<h1>Productos</h1>
 
 <!-- Start Advanced Gallery Html Containers -->
 <div id="gallery" class="content">

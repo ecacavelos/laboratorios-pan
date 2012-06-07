@@ -12,7 +12,8 @@ div.content a:focus, div.content a:hover, div.content a:active {
 	text-decoration: underline;
 }
 div.controls {
-	margin-top: 5px;
+	/*margin-top: 5px;*/
+	margin: 5px 25px;
 	height: 23px;
 }
 div.controls a {
@@ -68,6 +69,8 @@ div.download {
 div.caption-container {
 	position: relative;
 	clear: left;
+	
+	margin: 5px 25px;
 }
 span.image-caption {
 	display: block;
