@@ -22,6 +22,10 @@ a:link {
 	text-decoration: none;
 }
 
+a img {
+	border: none; 
+}
+
 a:visited {
 	color: #86A25F;
 	text-decoration: none;
@@ -40,7 +44,8 @@ a:active {
 h1 {
 	font: 32px 'GillSansLight','Gill Sans', 'Calibri';
 	color: #0b3061;
-	margin: 0;
+	/*margin: 0;*/
+	margin: 8px 22px;
 	padding: 5px 0 0;
 }
 
@@ -80,7 +85,6 @@ hr {
 
 #menuTop ul {
 
-
 }
 
 #menuTop li {
@@ -99,6 +103,11 @@ hr {
 	text-align: center;
 	text-transform: uppercase;
 	font: 100 15px 'GillSansLight', 'Gill Sans', 'Gill Sans MT', 'Calibri' !important;
+
+	-ms-transition: all 1s ease;
+	-moz-transition: all 1s ease;
+	-webkit-transition: all 1s ease;
+	-o-transition: all 1s ease;	
 }
 
 #menuTop li a:visited {
@@ -115,6 +124,13 @@ hr {
 	text-transform: uppercase;
 	text-align: center;
 	font: 100 15px 'GillSansLight','Gill Sans', 'Calibri';
+
+	-ms-transform:translate(0px,-10px); /* IE 9 */
+	-moz-transform:translate(0px,-10px); /* Firefox */
+	-webkit-transform:translate(0px,-10px); /* Safari and Chrome */
+	-o-transform:translate(0px,-10px); /* Opera */
+	
+	text-shadow: 1px 0px 0px #686868 , 0px 1px 0px #686868, -1px 0px 0px #686868, 0px -1px 0px #686868, 1px 0px 5px #aeaeae;
 }
 
 #menuTop li a:active {
@@ -129,16 +145,14 @@ hr {
 	width: 900px;
 	margin-right: auto;
 	margin-left: auto;
-/*
-
-background-color: #fffeff;*/
+	/*background-color: #fffeff;*/
 }
 
 #header {
 	height: 119px;
 	background: url(../img/franja_top.png) no-repeat 400px;
+	overflow: hidden;
 }
-
 #logo {
 	float: left;
 	width: 335px;
@@ -156,6 +170,12 @@ background-color: #fffeff;*/
 	margin-top: 20px;
 	position: relative;
 	left: 380px;
+}
+#logo_iso img {
+	-ms-transition: all 1s ease;
+	-moz-transition: all 1s ease;
+	-webkit-transition: all 1s ease;
+	-o-transition: all 1s ease;	
 }
 
 #head {
@@ -202,10 +222,9 @@ background-color: #fffeff;*/
 	border-bottom-left-radius: 8px;
 	-moz-border-radius-bottomright: 8px;
 	-webkit-border-bottom-right-radius: 8px;
-	border-bottom-right-radius: 8px;
+	border-bottom-right-radius: 8px;	
 	
-	
-	CSS3 Box Shadow */
+	/* CSS3 Box Shadow */
 	-moz-box-shadow: 0 0 10px #999;
 	-webkit-box-shadow: 0 0 10px #999;
 	box-shadow: 0 0 10px #999;
@@ -227,9 +246,7 @@ background-color: #fffeff;*/
 
 
 #footer #lf {
-
-
-/*background-color: #ff006f;*/
+	/*background-color: #ff006f;*/
 	float: left;
 	width: 350px;
 	margin-top: 5px;
@@ -237,17 +254,13 @@ background-color: #fffeff;*/
 }
 
 #footer #rg {
-
-
-/*background-color: #ff006f;*/
+	/*background-color: #ff006f;*/
 	float: left;
 	width: 515px;
 	text-align: right;
 }
 
 #illus_content {
-
-
 	/*background-color: #ffacc6;*/
 	height: 306px;
 	margin: 10px;
@@ -255,8 +268,6 @@ background-color: #fffeff;*/
 	background: url(../img/illust_home/01.jpg) no-repeat;
 }
 #illus_content_int_pages {
-
-
 	/*background-color: #ffacc6;*/
 	height: auto;
 	margin: 10px;

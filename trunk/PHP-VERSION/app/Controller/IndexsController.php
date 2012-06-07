@@ -18,7 +18,4 @@ class IndexsController extends AppController {
 
 	}
 	
-	public function contactenos() {
-	}
-	
 }
