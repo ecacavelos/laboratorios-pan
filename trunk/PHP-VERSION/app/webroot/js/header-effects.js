@@ -2,16 +2,25 @@
 $(window).load(function() {
 	
 	var rotable = document.getElementById('rotable_image');
+	var my_degree = 360;
 
 	setInterval(function() {
-		my_rotate(360);
-	}, 10000);
+		//alert("hola");
+		my_rotate(my_degree);
+		if (my_degree == 360){
+			my_degree = 0;	
+		}
+		else
+		{
+			my_degree = 360;
+		}
+	}, 5000);
 	
 	function my_rotate(degree) {
     	// For webkit browsers: e.g. Chrome
-	    $(rotable).css({ WebkitTransform: 'rotate(' + degree + 'deg)'});
+	    $(rotable).css({ WebkitTransform: 'rotateY(' + degree + 'deg)'});
 		// For Mozilla browser: e.g. Firefox
-		$(rotable).css({ '-moz-transform': 'rotate(' + degree + 'deg)'});
+		$(rotable).css({ '-moz-transform': 'rotateY(' + degree + 'deg)'});
     }
 	
 });
