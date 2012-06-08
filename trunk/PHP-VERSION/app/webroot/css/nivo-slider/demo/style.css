@@ -9,9 +9,10 @@
 
 #slider {
 	position:relative;
-    width:540px;
+    width:500px;
     height:141px;
     /*margin-left:190px;*/
+	margin-right: 10px;
 	background:url(images/loading.gif) no-repeat 50% 50%;
 }
 #slider img {

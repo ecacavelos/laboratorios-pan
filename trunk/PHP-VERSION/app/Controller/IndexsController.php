@@ -9,6 +9,8 @@ class IndexsController extends AppController {
     public $helpers = array('Html', 'Form');
 	
 	public function index() {
+		$this->loadModel('Producto');
+		$this->set('productos', $this->Producto->find('all'));
 	}
 	
 	public function empresa() {

@@ -264,7 +264,7 @@ hr {
 	/*background-color: #ffacc6;*/
 	height: 306px;
 	margin: 10px;
-	width: 876px;
+	width: 880px;
 	background: url(../img/illust_home/01.jpg) no-repeat;
 }
 #illus_content_int_pages {
@@ -273,6 +273,11 @@ hr {
 	margin: 10px;
 	width: auto;
 	
+}
+img#bienvenidos {
+	position: relative;
+	left: 10px;
+	width: 370px;	
 }
 
 .sep_shadow {
@@ -295,14 +300,17 @@ hr {
 }
 
 #slide_container {
-	float: left;
-	height: 141px;
-	width: 590px;
+	/*margin: 10px;*/
+	margin-right: 10px;
+	float: right;
+	height: 149px;
+	width: 500px;
+	/*width: 880px;*/
 
 	/*background-color: #bebfc2;*/
 	position: relative;
-	top: 150px;
-	left: 10px;
+	/*top: 150px;*/
+	/*left: 10px;*/
 }
 
 #intro_text {

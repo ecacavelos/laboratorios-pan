@@ -3,12 +3,17 @@
 <?php $this->set('title_for_layout', "Laboratorios PAN SRL"); ?>
 
 <div id="illus_content">
-    <div id="slide_container">
-        <div id="slider" class="nivoSlider">
-            <!--<img src="images/slide_home/01.png" alt=""/>-->
-            <?php echo $this->Html->image('slide_home/01.png', array('alt' => "")); ?>
-            <!--<img src="images/slide_home/02.png" alt=""/>-->
-            <?php echo $this->Html->image('slide_home/02.png', array('alt' => "")); ?>
-        </div>
+</div>
+
+<?php echo $this->Html->image('bienvenidos.png', array('id' => 'bienvenidos', 'alt' => "", 'width' => '397px', 'height' => '149px')); ?>
+
+<div id="slide_container">
+    <div id="slider" class="nivoSlider">
+	<?php
+		foreach ($productos as $producto){ 
+			//echo '<p>'.$producto['Producto']['nombre'].'</p>';
+			echo $this->Html->image('productos/'.$producto['Producto']['id'].'.jpg', array('alt' => "", 'width' => '500px', 'height' => '149px'));
+		}
+	?>
     </div>
 </div>
