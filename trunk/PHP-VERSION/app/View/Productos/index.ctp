@@ -43,7 +43,7 @@
             $path_thumb = $this->webroot.'img/productos/'.$producto['Producto']['id'].'.jpg';
             
             echo '<li>
-            <a class="thumb" name="drop" href="'.$path.'" title="'.$producto['Producto']['nombre'].'">
+            <a class="thumb" name="'.$producto['Producto']['nombre'].'" href="'.$path.'" title="'.$producto['Producto']['nombre'].'">
                 <img src="'.$path_thumb.'" alt="'.$producto['Producto']['nombre'].'" />
             </a>
             <div class="caption">

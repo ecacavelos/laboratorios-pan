@@ -969,6 +969,12 @@
 			});
 		}
 
+		// Si el URL termina en #id, ir a la foto con ese id.
+		if(window.location.hash) {
+			var fotoid = '#' + window.location.hash.substring(1);			
+			$.galleriffic.gotoImage(fotoid);			
+		}
+
 		// Auto start the slideshow
 		if (this.autoStart)
 			this.play();
