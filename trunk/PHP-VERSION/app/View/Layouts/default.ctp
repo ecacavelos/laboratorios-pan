@@ -99,7 +99,7 @@ $cakeDescription = __d('cake_dev', 'CakePHP: the rapid development php framework
                 </div>
                 <div id="rg">
                     <!--<a href="index.html"><img src="images/homenaje_home.png"/></a>-->
-                    <?php echo $this->Html->image('homenaje_home.png', array('alt' => $title_for_layout, 'url' => '/')); ?>
+                    <?php echo $this->Html->image('homenaje_home.png', array('alt' => $title_for_layout, 'url' => '/homenaje')); ?>
                 </div>
 			</div>
 		</div>
