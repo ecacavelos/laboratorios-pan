@@ -3,7 +3,7 @@ class IndexsController extends AppController {
 	
 	public function beforeFilter() {
 		parent::beforeFilter();
-		$this->Auth->allow('index', 'empresa', 'enlaces', 'contactenos');
+		$this->Auth->allow('index', 'empresa', 'enlaces', 'homenaje');
 	}
 	
     public $helpers = array('Html', 'Form');
@@ -17,7 +17,9 @@ class IndexsController extends AppController {
 	}
 	
 	public function enlaces() {
-
 	}
 	
+	public function homenaje() {
+	}	
+		
 }

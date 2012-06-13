@@ -32,6 +32,7 @@
  
  	Router::connect('/empresa', array('controller' => 'indexs', 'action' => 'empresa'));
 	Router::connect('/enlaces', array('controller' => 'indexs', 'action' => 'enlaces'));
+	Router::connect('/homenaje', array('controller' => 'indexs', 'action' => 'homenaje'));
  
 /**
  * ...and connect the rest of 'Pages' controller's urls.
