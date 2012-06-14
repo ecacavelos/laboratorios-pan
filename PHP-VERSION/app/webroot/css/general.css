@@ -274,6 +274,8 @@ hr {
 }
 
 #illus_content {
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
 	border-radius: 5px;
 	/*background-color: #ffacc6;*/
 	height: 306px;
@@ -289,7 +291,10 @@ hr {
 	
 }
 img#bienvenidos {
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
 	border-radius: 5px;
+	
 	position: relative;
 	left: 10px;
 	width: 370px;	
@@ -315,8 +320,6 @@ img#bienvenidos {
 }
 
 #slide_container {
-	border-radius: 5px;
-	overflow: hidden;
 	/*margin: 10px;*/
 	margin-right: 10px;
 	float: right;
@@ -325,9 +328,18 @@ img#bienvenidos {
 	/*width: 880px;*/
 
 	/*background-color: #bebfc2;*/
-	position: relative;
+	/*position: relative;*/
 	/*top: 150px;*/
-	/*left: 10px;*/
+	/*left: 10px;*/	
+}
+#slide_wrapper {
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+	border-radius: 5px;
+	overflow: hidden;	
+	
+	/*position: absolute;*/
+	-webkit-mask-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAIAAACQd1PeAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAA5JREFUeNpiYGBgAAgwAAAEAAGbA+oJAAAAAElFTkSuQmCC); /* this fixes the overflow:hidden in Chrome/Opera */
 }
 
 #intro_text {
@@ -918,6 +930,11 @@ CSS3 Rounded Corners */
 	-webkit-border-bottom-right-radius: 3px;
 	border-bottom-right-radius: 3px;
 
+}
+
+/* Mensajes de aviso de Login en la pagina de Productos */
+p#msg_logeado {
+	margin: 22px 22px 8px;
 }
 
 /* Formulario de Login */
