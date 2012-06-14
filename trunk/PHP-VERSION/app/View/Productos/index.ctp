@@ -1,7 +1,13 @@
 <?php
+	App::uses('Folder', 'Utility');
+	App::uses('File', 'Utility');
+
 	if ($logeado == '1') {
+		echo '<p id="msg_logeado">';
 		echo 'Estas logeado. ';
+		echo '<br>'.$this->Html->link('Agregar Producto', array('controller' => 'productos', 'action' => 'add')).'</br>';
 		echo $this->Html->link('Cerrar Sesión', array('controller' => 'users', 'action' => 'logout'));
+		echo '</p>';
 	}
 ?>
 
@@ -49,11 +55,19 @@
             <div class="caption">
                 <div class="image-title">'.$producto['Producto']['nombre'].'</div>
                 <div class="image-desc"><p id="desc_producto">'.$producto['Producto']['descripcion'].'</p></div>';            
+				
 				if ($logeado == '1') {
 					echo '<p>'.$this->Html->link('Editar este producto', array('controller' => 'productos', 'action' => 'edit', $producto['Producto']['id'])).'</p>';
 					echo '<p>'.$this->Form->postLink('Eliminar este producto', array('controller' => 'productos', 'action' => 'delete', $producto['Producto']['id']), array('confirm' => 'Está seguro?')).'</p>';
 				}
-				echo '<p>'.$this->Html->link('Ver el prospecto','/img/productos/'.$producto['Producto']['nombre'].'.pdf', array('target' => '_blank')).'</p>';
+				
+				$dir = new Folder(WWW_ROOT.'img/productos');
+				$file = new File($dir->pwd() . DS . $producto['Producto']['nombre'].'.pdf');				
+				if ($file->exists()) {
+					echo '<p>'.$this->Html->link('Ver el prospecto','/img/productos/'.$producto['Producto']['nombre'].'.pdf', array('target' => '_blank')).'</p>';
+				}
+				$file->close();
+				
         	echo '</div>
 			</li>';
 		
