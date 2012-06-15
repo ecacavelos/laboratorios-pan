@@ -971,5 +971,23 @@ form#ProductoAddForm fieldset label {
 #desc_producto{
 	word-wrap: break-word;
 }
+#sin_productos {
+font-size: 38px;
+font-style: normal;
+color: 
+#CCC;
+position: absolute;
+height: 160px;
+width: 900px;
+left: auto;
+top: 210px;
+right: auto;
+bottom: auto;
+text-align: center;
+background-color: 
+#EDEDED;
+}
+
+
 
 /* @end */

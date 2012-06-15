@@ -42,35 +42,37 @@
     <?php             
         //$productos -> es un array con la siguiente estructura:$productos[nro_producto]['Producto'][campo] :::: 'Producto' es el string Producto, es decir, siempre va ser Producto
         //$this->webroot.'/img/productos/'.$producto['Producto']['id_producto'].'.jpg -> path a las imagenes. 
-        foreach ($productos as $producto){
-            
-            $path = $this->webroot.'img/productos/'.$producto['Producto']['id'].'.jpg';
-            //$path_thumb = $this->webroot.'img/productos/'.$producto['Producto']['id_producto'].'_s.jpg';
-            $path_thumb = $this->webroot.'img/productos/'.$producto['Producto']['id'].'.jpg';
-            
-            echo '<li>
-            <a class="thumb" name="'.$producto['Producto']['nombre'].'" href="'.$path.'" title="'.$producto['Producto']['nombre'].'">
-                <img src="'.$path_thumb.'" alt="'.$producto['Producto']['nombre'].'" />
-            </a>
-            <div class="caption">
-                <div class="image-title">'.$producto['Producto']['nombre'].'</div>
-                <div class="image-desc"><p id="desc_producto">'.$producto['Producto']['descripcion'].'</p></div>';            
-				
-				if ($logeado == '1') {
-					echo '<p>'.$this->Html->link('Editar este producto', array('controller' => 'productos', 'action' => 'edit', $producto['Producto']['id'])).'</p>';
-					echo '<p>'.$this->Form->postLink('Eliminar este producto', array('controller' => 'productos', 'action' => 'delete', $producto['Producto']['id']), array('confirm' => 'Está seguro?')).'</p>';
-				}
-				
-				$dir = new Folder(WWW_ROOT.'img/productos');
-				$file = new File($dir->pwd() . DS . $producto['Producto']['nombre'].'.pdf');				
-				if ($file->exists()) {
-					echo '<p>'.$this->Html->link('Ver el prospecto','/img/productos/'.$producto['Producto']['nombre'].'.pdf', array('target' => '_blank')).'</p>';
-				}
-				$file->close();
-				
-        	echo '</div>
-			</li>';
-		
+        if (!empty($productos)){
+        	foreach ($productos as $producto){
+	            
+	            $path = $this->webroot.'img/productos/'.$producto['Producto']['id'].'.jpg';
+	            //$path_thumb = $this->webroot.'img/productos/'.$producto['Producto']['id_producto'].'_s.jpg';
+	            $path_thumb = $this->webroot.'img/productos/'.$producto['Producto']['id'].'.jpg';
+	            
+	            echo '<li>
+	            <a class="thumb" name="'.$producto['Producto']['nombre'].'" href="'.$path.'" title="'.$producto['Producto']['nombre'].'">
+	                <img src="'.$path_thumb.'" alt="'.$producto['Producto']['nombre'].'" />
+	            </a>
+	            <div class="caption">
+	                <div class="image-title">'.$producto['Producto']['nombre'].'</div>
+	                <div class="image-desc"><p id="desc_producto">'.$producto['Producto']['descripcion'].'</p></div>';            
+					
+					if ($logeado == '1') {
+						echo '<p>'.$this->Html->link('Editar este producto', array('controller' => 'productos', 'action' => 'edit', $producto['Producto']['id'])).'</p>';
+						echo '<p>'.$this->Form->postLink('Eliminar este producto', array('controller' => 'productos', 'action' => 'delete', $producto['Producto']['id']), array('confirm' => 'Está seguro?')).'</p>';
+					}
+					
+					$dir = new Folder(WWW_ROOT.'img/productos');
+					$file = new File($dir->pwd() . DS . $producto['Producto']['nombre'].'.pdf');				
+					if ($file->exists()) {
+						echo '<p>'.$this->Html->link('Ver el prospecto','/img/productos/'.$producto['Producto']['nombre'].'.pdf', array('target' => '_blank')).'</p>';
+					}
+					$file->close();
+					
+	        	echo '</div>
+				</li>';
+			
+	        }
         }    
     ?>				
         
@@ -133,3 +135,13 @@
 		});
 	});
 </script>
+ <?php 
+ 
+ if (empty($productos)){
+ 	echo '<div id="sin_productos"> 
+                    Estamos actualizando nuestra lista de productos<br/>
+                    Por favor regresa mas tarde<br/>
+                     Gracias! 
+               </div>';
+ }
+ ?>
