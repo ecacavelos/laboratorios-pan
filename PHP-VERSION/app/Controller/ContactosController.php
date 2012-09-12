@@ -26,7 +26,11 @@ class ContactosController extends AppController {
 		$email = new CakeEmail($servidor_mail);
 		$email->to($correo_empresa_destinataria);
 		$email->subject('Mensaje de un usuario a traves de la pagina');
-		$email->send($this->request->data['Contacto']['mensaje']);
+		$email->send($this->request->data['Contacto']['mensaje']."
+		
+		Nombre:".$this->request->data['Contacto']['nombre']."
+		Mail:".$this->request->data['Contacto']['email']."
+		Ciudad:".$this->request->data['Contacto']['ciudad']);
 		
 		//MAIL PARA EL USUARIO
 		$email = new CakeEmail($servidor_mail);
