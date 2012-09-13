@@ -43,13 +43,14 @@ class ContactosController extends AppController {
 		
 		
 		Gracias.');
-		$this->Session->setFlash('Gracias Por enviarnos su consulta, le estaremos respondiendo en los proximos dias');
-        $this->redirect(array('controller'=>'indexs', 'action' => 'index'));
-	
-        
-        
+		
+		if($this->Contacto->save($this->request->data)){		
+			$this->Session->setFlash('Gracias Por enviarnos su consulta, le estaremos respondiendo en los proximos dias');
+        	$this->redirect(array('controller'=>'indexs', 'action' => 'index'));		
+		} else {
+			$this->Session->setFlash(__('Por favor intente nuevamente.'));
+		}               
 	
 	}
-	
 		
 }
